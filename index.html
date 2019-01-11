@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Таблица умножения</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<div class="number">
+			<div class="forAll leftOperand">
+				<span>{{ leftOperand }}</span>
+			</div>
+			<div class="forAll multiplicationOperator">
+				<span>*</span>
+			</div>
+			<div class="forAll rightOperand">
+				<span>{{ rightOperand }}</span>
+			</div>
+			<div class="forAll equallyOperator">
+				<span>=</span>
+			</div>
+			<div class="forAll result">
+				<span class="result__span">{{ isHideResult ? '?' : result }}</span>
+			</div>
+		</div>
+		<input-number
+			:variants="[1, 2, 3, 4, 5, 6, 7, 8]"
+			v-model="leftOperandVariants">
+		</input-number>
+		<div class="variants">
+			<div class="button" v-for="btn in buttons" :class="{correct: btn.isCorrect === true, error: 	btn.isCorrect === false}">
+			{{ btn.value }} 
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="index.js"></script>
+</body>
+</html>
