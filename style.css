@@ -1,93 +1,98 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 body {
-  background: #43A047;
-  height: 100vh;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font: 3em Roboto, Helvetica neue, verdana, sans-serif;
-  color: white;
+	background-color: #43A047;
+	height: 100vh;
+	margin: 0;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: Roboto, Helvetica neue, verdana, sans-serif;
+	color: white;
 }
 
 #app {
-  margin: 0 auto;
-  width: 800px;
+	margin: 0 auto;
+	width: 800px;
 }
 .variants {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 20px auto;
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 20px auto;
 }
 .button {
-  position: absolute;
-  border: 2px solid white;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	position: absolute;
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4em;
 }
 
 .button:first-child {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .button:nth-child(2) {
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .button:nth-child(3) {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .button:nth-child(4) {
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .correct {
-  color: black;
-  background-color: #fff;
+	color: black;
+	background-color: #fff;
 }
 
 .error {
-  color: white;
-  border-color: red;
-  background-color: red;
+	color: white;
+	border-color: red;
+	background-color: red;
 }
-.number {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.forAll {
-  display: inline-block;
-  font-size: 3em;
+.main {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-size: 10em;
 }
 .leftOperand,
 .rightOperand,
 .multiplicationOperator,
 .equallyOperator,
 .result {
-  width: 150px;
+	width: 150px;
 }
-.numbers {
-  font-size: 0.5em;
-  position: absolute;
-  left: 2%;
-  top: 10px;
+.input-numbers {
+	font-size: 1.5em;
+	position: absolute;
+	left: 2%;
+	top: 10px;
 }
+
+@media only screen and (max-width: 400px) {
+	body { /* проверка */
+		background-color: red;
+	}
+}
+

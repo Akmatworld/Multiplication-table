@@ -11,7 +11,7 @@ Vue.component('input-number', {
 		},
 	},
 	template: `
-		<div class='numbers'>
+		<div class='input-numbers'>
 		 <div v-for="(v, i) in variants">
 			 <input
 				type="checkbox"
@@ -61,6 +61,7 @@ const app = new Vue({ // Всегда используй const или let вме
 				keyCode: 37, // Left
 			}
 		],
+		minute: 2000,
 		leftOperandVariants: [2],
 		leftOperand: 0,
 		rightOperandVariants: [2, 3, 4, 5, 6, 7, 8, 9],
@@ -88,15 +89,27 @@ const app = new Vue({ // Всегда используй const или let вме
 			if (this.pauseGame) return; // Если игра на паузе ничего не делаем
 			this.pauseGame = true; // Ставим на паузу
 			const selectedBtn = this.buttons.find(btn => btn.keyCode == keyCode); // Находим что выбрал игрок
-			selectedBtn.isCorrect = selectedBtn.value === this.result; // Проверяем его выбор
+			
+			// Проверяем выбор игрока
+			if (selectedBtn.value === this.result) { 
+				selectedBtn.isCorrect = true;
+			} else {
+				/* Если не правильно то выбранный кнопка будет закрашен на красный цвет,
+				Дальше найдем правильный ответ и закрашим его на белый цвет.
+				*/
+				selectedBtn.isCorrect = false;
+				const rightResponse = this.buttons.find(btn => btn.value == this.result);
+				rightResponse.isCorrect = true;
+			}
+
 			this.isHideResult = false; // Показываем правильный овтет
 
 			if (this.leftOperandVariants.length == 0) {
 				alert('Если, не выбран ни одно число по умолчанию будет выбран число 2');
 				this.leftOperandVariants.push(2);
-				setTimeout(() => this.reset() && this.next(), 2000) // Сброс и следующий раунд
+				setTimeout(() => this.reset() && this.next(), this.minute) // Сброс и следующий раунд
 			} else {
-				setTimeout(() => this.reset() && this.next(), 2000) // Сброс и следующий раунд
+				setTimeout(() => this.reset() && this.next(), this.minute) // Сброс и следующий раунд
 			}
 		},
 		
