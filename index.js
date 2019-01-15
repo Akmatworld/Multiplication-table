@@ -33,6 +33,7 @@ const app = new Vue({ // Всегда используй const или let вме
 			if (selectedBtn) {
 				this.doChoise(event.keyCode);
 			}
+			return;
 		}, false);
 		this.next();
 	},
@@ -53,15 +54,15 @@ const app = new Vue({ // Всегда используй const или let вме
 			{
 				value: 0,
 				isCorrect: null,
-				keyCode: 40, // Down
+				keyCode: 37, // Left
 			},
 			{
 				value: 0,
 				isCorrect: null,
-				keyCode: 37, // Left
+				keyCode: 40, // Down
 			}
 		],
-		minute: 2000,
+		minute: 1000,
 		leftOperandVariants: [2],
 		leftOperand: 0,
 		rightOperandVariants: [2, 3, 4, 5, 6, 7, 8, 9],

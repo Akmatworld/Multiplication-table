@@ -18,7 +18,7 @@ body {
 	max-width: 1200px;
 	position: relative;
 }
-.variants {
+.answers {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 20px auto;
