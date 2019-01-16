@@ -38,7 +38,6 @@ const app = new Vue({ // Всегда используй const или let вме
 			if (selectedBtn) {
 				this.doChoise(event.keyCode);
 			}
-			return;
 		}, false);
 		this.next();
 	},
@@ -61,29 +60,18 @@ const app = new Vue({ // Всегда используй const или let вме
 			{
 				value: 0,
 				isCorrect: null,
-<<<<<<< HEAD
 				keyCode: 40, // Down
 				idName: 'down'
-=======
-				keyCode: 37, // Left
->>>>>>> d8c5368224afbc708e06c8c8740e1c3fec2cef94
 			},
 			{
 				value: 0,
 				isCorrect: null,
-<<<<<<< HEAD
 				keyCode: 37, // Left
 				idName: 'left'
 			}
 		],
 
 		minute: 2000,
-=======
-				keyCode: 40, // Down
-			}
-		],
-		minute: 1000,
->>>>>>> d8c5368224afbc708e06c8c8740e1c3fec2cef94
 		leftOperandVariants: [2],
 		leftOperand: 0,
 		rightOperandVariants: [2, 3, 4, 5, 6, 7, 8, 9],
