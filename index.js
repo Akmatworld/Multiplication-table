@@ -28,6 +28,11 @@ Vue.component('input-number', {
 const app = new Vue({ // Всегда используй const или let вместо var
 	el: '#app',
 	mounted() {
+		this.bindHandler('up');
+		this.bindHandler('left');
+		this.bindHandler('right');
+		this.bindHandler('down');
+
 		window.addEventListener('keydown', event => {
 			const selectedBtn = this.buttons.find(btn => btn.keyCode == event.keyCode);
 			if (selectedBtn) {
@@ -44,23 +49,28 @@ const app = new Vue({ // Всегда используй const или let вме
 				value: 0,
 				isCorrect: null, // Если верно true, если не верно false
 				keyCode: 38, // Up
+				idName: 'up'
 			},
 			{
 				value: 0,
 				isCorrect: null,
 				keyCode: 39, // Right
+				idName: 'right'
 			},
 			{
 				value: 0,
 				isCorrect: null,
 				keyCode: 40, // Down
+				idName: 'down'
 			},
 			{
 				value: 0,
 				isCorrect: null,
 				keyCode: 37, // Left
+				idName: 'left'
 			}
 		],
+
 		minute: 2000,
 		leftOperandVariants: [2],
 		leftOperand: 0,
@@ -75,6 +85,14 @@ const app = new Vue({ // Всегда используй const или let вме
 		}
 	},
 	methods: {
+		bindHandler(id) {
+			let myEvent = document.getElementById(id);
+			myEvent.addEventListener('click', event => {
+				let clickKeyCode = myEvent.getAttribute('data-keycode');
+				this.doChoise(clickKeyCode);
+			});
+		},
+
 		getRandomInt(min, max, exclude) { // Случайное число между min и max
 			const newInt = Math.floor(Math.random() * (max - min)) + min;
 			return newInt === exclude ? this.getRandomInt(min, max, exclude) : newInt;

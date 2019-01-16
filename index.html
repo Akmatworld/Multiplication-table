@@ -31,7 +31,7 @@
 			v-model="leftOperandVariants">
 		</input-number>
 		<div class="variants">
-			<div class="button" v-for="btn in buttons" :class="{correct: btn.isCorrect === true, error: 	btn.isCorrect === false}">
+			<div class="button" v-for="btn in buttons" :class="{correct: btn.isCorrect === true, error: 	btn.isCorrect === false}" v-bind:data-keyCode="btn.keyCode" v-bind:id="btn.idName">
 			{{ btn.value }} 
 			</div>
 		</div>
