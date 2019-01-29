@@ -60,14 +60,14 @@ const app = new Vue({ // Всегда используй const или let вме
 			{
 				value: 0,
 				isCorrect: null,
-				keyCode: 40, // Down
-				idName: 'down'
+				keyCode: 37, // left
+				idName: 'left'
 			},
 			{
 				value: 0,
 				isCorrect: null,
-				keyCode: 37, // Left
-				idName: 'left'
+				keyCode: 40, // down
+				idName: 'down'
 			}
 		],
 

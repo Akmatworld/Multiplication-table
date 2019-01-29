@@ -30,9 +30,14 @@
 			:variants="[1, 2, 3, 4, 5, 6, 7, 8]"
 			v-model="leftOperandVariants">
 		</input-number>
-		<div class="answers">
-			<div class="button" v-for="btn in buttons" :class="{correct: btn.isCorrect === true, error: 	btn.isCorrect === false}" v-bind:data-keyCode="btn.keyCode" v-bind:id="btn.idName">
-			{{ btn.value }} 
+		
+		<div class="wrapper">
+			<div class="answers">
+				<div class="container">
+					<div class="button" v-for="btn in buttons" :class="{correct: btn.isCorrect === true, error: 	btn.isCorrect === false}" v-bind:data-keyCode="btn.keyCode" v-bind:id="btn.idName">
+					{{ btn.value }} 
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
