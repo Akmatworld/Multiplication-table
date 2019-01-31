@@ -16,19 +16,22 @@ html, body {
 	margin: 0 auto;
 	max-width: 1200px;
 	position: relative;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
 }
 .wrapper {
   max-width: 500px;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  flex: 1;
 }
 .answers {
 	width: 100%;
   padding-bottom: 100%;
   position: relative;
+  align-self: flex-end;
 }
 .container {
   overflow: hidden;
@@ -86,5 +89,4 @@ html, body {
 	left: 1%;
 	top: 10px;
 }
-
 
