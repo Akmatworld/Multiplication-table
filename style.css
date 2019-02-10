@@ -17,21 +17,63 @@ html, body {
 	max-width: 1200px;
 	position: relative;
   height: 100%;
+  /*display: flex;
+  flex-flow: column;*/
+  /*background-color: #778;*/
+  overflow: hidden;
+}
+/* user name */
+.user-name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+/* menu for adaptive */
+#click-menu {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.one-line,
+.two-line,
+.three-line {
+  background-color: white;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 4px;
+}
+.one-line {
+}
+
+/* user statistic */
+.user-statistic {
   display: flex;
-  flex-flow: column;
+  font-size: 1.5em;
+}
+.user-errors {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.user-ball {
+  display: flex;
+  justify-content: center;
+  width: 50%;
 }
 .wrapper {
+  margin: 0 auto;
   max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  /*flex: 1;*/
 }
 .answers {
 	width: 100%;
   padding-bottom: 100%;
   position: relative;
-  align-self: flex-end;
+  /*align-self: flex-end;*/
 }
 .container {
   overflow: hidden;
@@ -85,8 +127,46 @@ html, body {
 }
 .input-numbers {
 	position: absolute;
-	font-size: 3vw;
-	left: 1%;
+	font-size: 2em;
+	right: 10px;
 	top: 10px;
+  z-index: 1;
 }
 
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .input-numbers {
+      top: 40px;
+      font-size: 1.4em;
+      display: none;
+    }
+    #click-menu {
+      display: block;
+    }
+    .main {
+      font-size: 3em;
+      margin-top: 30px;
+    }
+    .user-statistic {
+      font-size: 1em;
+    }
+    .wrapper {
+      margin-top: 30px;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    #app {
+      background-color: green;
+    }
+}

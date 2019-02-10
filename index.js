@@ -11,7 +11,7 @@ Vue.component('input-number', {
 		},
 	},
 	template: `
-		<div class='input-numbers'>
+		<div id="inputs-id" class='input-numbers'>
 		 <div v-for="(v, i) in variants">
 			 <input
 				type="checkbox"
@@ -158,3 +158,15 @@ const app = new Vue({ // Всегда используй const или let вме
 		}
 	},
 });
+
+// js code for click menu
+let menu = document.getElementById('click-menu');
+menu.addEventListener('click', event => {
+  let inputs = document.getElementById('inputs-id');
+
+  if(inputs.style.display === 'none') {
+     inputs.style.display = 'block';
+  } else {
+    inputs.style.display = 'none';
+  }
+}, false);
