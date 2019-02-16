@@ -158,6 +158,9 @@ html, body {
     .wrapper {
       margin-top: 30px;
     }
+    .button {
+      font-size: 4em;
+    }
 }
 
 /* Landscape */
@@ -166,7 +169,29 @@ html, body {
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-    #app {
-      background-color: green;
+    .user-statistic {
+      font-size: 1em;
+    }
+    .input-numbers {
+      font-size: 1em;
+      top: 40px;
+    }
+    #click-menu {
+      display: block;
+    }
+    .main {
+      font-size: 3em;
+      padding-bottom: 10px;
+    }
+    .container {
+      transform: none;
+      position: relative;
+      margin-top: 105px;
+    }
+    .button {
+      transform: none;
+      font-size: 2.4em;
+      width: 74px;
+      height: 70px;
     }
 }
